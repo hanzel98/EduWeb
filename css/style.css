@@ -6,3 +6,25 @@
   border:1px;
   border-radius: 10px;
 }
+.formulario-padding{
+  margin: 20px auto;
+  width: 700px;
+  -webkit-border-radius: 8px/7px;
+  -moz-border-radius: 8px/7px;
+  border-radius: 8px/7px;
+  background-color:#E0F2F1;
+  -webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+  -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+  box-shadow: 1px 2px 5px rgba(0,0,0,.31);
+  border: solid 1px #4DB6AC;
+}
+
+#message{
+  height: 80px;
+}
+
+
+#btnSubmit{
+  margin-bottom: 10px;
+  margin-left: 600px;
+}
