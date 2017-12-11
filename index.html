@@ -3,11 +3,14 @@
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.2/minty/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style_slider.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EduWeb-Home</title>
 </head>
 <body>
+
+  <!-- NAV VAR -->
 <div class="navbar-padding">
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <a class="navbar-brand" href="#">EduWeb</a>
@@ -55,6 +58,62 @@
    </div>
  </div>
 
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <!-- ====================================
+      Contenedor Slider
+      =======================================-->
+      <section id="slider" class="container-slider">
+        <ul class="slider-wrapper">
+        <li class="current-slide">
+          <img src="img/1_slider.jpg" title="" alt="">
+          <div class="caption">
+            <h2 class="slider-title">Java</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, placeat est. Alias illo hic quo nobis, aspernatur iste ut voluptate.</p>
+          </div>
+        </li>
+        <li>
+          <img src="img/2_slider.jpg" title="" alt="">
+          <div class="caption">
+            <h2 class="slider-title">Diseño Responsive</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo iusto placeat aliquid tempore harum, similique!</p>
+          </div>
+        </li>
+
+        <li>
+          <img src="img/3_slider.jpg" title="" alt="">
+
+          <div class="caption">
+            <h2 class="slider-title">Identidad Corporativa</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos dicta laudantium voluptatem minima! Dolorum tempore dolores excepturi omnis provident. Commodi quis aperiam maiores, dolore a perferendis!</p>
+          </div>
+        </li>
+
+        <li>
+          <img src="img/4_slider.jpg" title="" alt="">
+
+          <div class="caption">
+            <h2 class="slider-title">Desarrollo Web</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dolore dignissimos laudantium.</p>
+          </div>
+        </li>
+        </ul>
+        <!-- Sombras -->
+        <div class="slider-shadow"></div>
+
+        <!-- Controles de Navegacion -->
+        <ul id="control-buttons" class="control-buttons"></ul>
+      </section>
+    </div>
+  </div>
+
+</div>
+
+ <!-- Scripts -->
+ <script src="js/jquery.min.js"></script>
+ <script src="js/slider.js"></script>
 
 </body>
 </html>
