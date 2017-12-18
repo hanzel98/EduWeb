@@ -28,3 +28,10 @@
   margin-bottom: 10px;
   margin-left: 600px;
 }
+
+#mensaje {
+	height:100px;
+  width:
+	max-width:100%;
+  resize:none;
+}

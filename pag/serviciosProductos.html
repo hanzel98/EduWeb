@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.2/minty/bootstrap.min.css">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/style_servicios.css">
+  <link rel="stylesheet" href="../css/modal.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EduWeb-Servicios/Productos</title>
@@ -43,25 +44,229 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-3">
-        <button type="button" class="btn btn-primary btn-lg" style="background-image: url(../img/javaLogo.jpg);" onclick=java()></button>
+        <button type="button" id="btnJava" class="btn btn-primary btn-lg" style="background-image: url(../img/javaLogo.jpg);"></button>
       </div>
       <div class="col-lg-3">
-        <button type="button" class="btn btn-primary btn-lg" style="background-image: url(../img/PythonLogo.jpg);"></button>
+        <button type="button" id="btnPython" class="btn btn-primary btn-lg" style="background-image: url(../img/PythonLogo.jpg);"></button>
       </div>
       <div class="col-lg-3">
-        <button type="button" class="btn btn-primary btn-lg" style="background-image: url(../img/XamarinLogo.jpg);"></button>
+        <button type="button" id="btnXamarin" class="btn btn-primary btn-lg" style="background-image: url(../img/XamarinLogo.jpg);"></button>
       </div>
       <div class="col-lg-3">
-        <button type="button" class="btn btn-primary btn-lg" style="background-image: url(../img/OracleDBALogo.jpg);"></button>
+        <button type="button" id="btnOracleDBA" class="btn btn-primary btn-lg" style="background-image: url(../img/OracleDBALogo.jpg);"></button>
       </div>
     </div>
   </div>
 
-<script type="text/javascript">
-  function java(){
-    alert("AKSJASKHDAKSSJ");
-  }
-</script>
+  <!-- The Java Modal -->
+  <div id="JavaModal" class="modal">
 
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modalHeaderSpan">Curso Java</span>
+        <span id="spanJava" class="close">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p class="p-description">
+          <b>Java</b> es un lenguaje orientado a objetos y permite crear programas multiplataforma a través de su máquina
+          virtual, lo que lo hace ser un lenguaje muy utilizado para el desarrollo de aplicaciones móviles, aplicaciones
+          web, sistemas tradicionales, entre otros tipos. El curso se centrará en los aspectos fundamentales de java
+          como el entorno de desarrollo, la máquina virtual, las características de la programación orientada a objetos y su implementación con este lenguaje y la sintaxis del mismo.
+          Este curso está dirigido a personas que tengan conocimientos mínimos o básicos en programación.
+          <br><br>
+          A continuación puede encontrar los temas del curso:
+          <br><br>
+          <b>Unidad No.1</b>
+          Introducción a Java y a la programación O. O.
+          Lectura desde consola de valores de usuario.
+          Cadenas de caracteres
+          Operadores, Condiciones y ciclos (estructuras de control).
+          <br>
+          <b>Unidad No.2</b>
+          Manejo de errores.
+          Objetos, clases métodos y constructores
+          Uso de varias clases en un proyecto.
+          <br>
+          <b>Unidad No.3</b>
+          Arreglos y Colecciones.
+          Herencia y polimorfismo
+          <br>
+          <b>Unidad No.4</b>
+          Uso de librerías externas.
+          Manipulación de archivos planos
+          Interfaces
+          <br>
+          <b>Unidad No.5</b>
+          Creación de archivos pdf
+          Creación de archivos para Excel
+          <br><br>
+          Adquieralo ya...
+          </p>
+      </div>
+      <div class="modal-footer">
+          <button id="btnAñadirCursoJava" class="options">Añadir Curso</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- The Python Modal -->
+  <div id="PythonModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modalHeaderSpan">Curso Python</span>
+        <span id="spanPython" class="close">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p class="p-description">
+          <b>Python</b> es un lenguaje de programación interpretado cuya filosofía hace hincapié en una sintaxis muy limpia y un código legible.
+          Es una buena alternativa para optar por este lenguaje en el mundo de la programación, puesto que es un lenguaje muy sencillo y fácil.
+          Su sintaxis es fácil de entender puesto que es cercana al lenguaje natural, y los programas hechos en Python parecen pseudocódigos,
+          lo cual brinda una gran ayuda en su mantenimiento. Su código es más organizado evitando el uso del signo de punto y coma al final de
+          cada sentencia y también evita el uso de llaves para especificar que dicho bloque de código pertenece a una sentencia. Para esto Python
+          hace uso de la indentación, la cual esta representada por un bloque de 4 espacios, teniendo así un código legible.
+          <br><br>
+          A continuación puede encontrar los temas del curso:
+          <br>
+          <b>Tutorial Python 1:</b> Introducción al Lenguaje de Programación
+          <br>
+          <b>Tutorial Python 2:</b> Instalación
+          <br>
+          <b>Tutorial Python 3:</b> “Hola Mundo”
+          <br>
+          <b>Tutorial Python 4:</b> Enteros, reales y operadores aritméticos
+          <br>
+          <b>Tutorial Python 5:</b> Booleanos, operadores lógicos y cadenas
+          <br>
+          <b>Tutorial Python 6:</b> Listas
+          <br>
+          <b>Tutorial Python 7:</b> Tuplas
+          <br>
+          <b>Tutorial Python 8:</b> Diccionarios
+          <br>
+          <b>Tutorial Python 9:</b> Operadores relacionales
+          <br>
+          <b>Tutorial Python 10:</b> Sentencias condicionales
+          <br>
+          <b>Tutorial Python 11:</b> Bucles
+          <br>
+          <b>Tutorial Python 12:</b> Funciones
+          <br>
+          <b>Tutorial Python 13:</b> Clases y Objetos
+          <br>
+          <b>Tutorial Python 14:</b> Herencia
+          <br>
+          <b>Tutorial Python 15:</b> Herencia multiple
+          <br>
+          <b>Tutorial Python 16:</b> Cadenas y métodos
+          <br>
+          <b>Tutorial Python 17:</b> Listas y sus métodos
+          <br>
+          <b>Tutorial Python 18:</b> Diccionarios y sus métodos
+          <br><br>
+          Te esperamos en el curso...
+          </p>
+      </div>
+      <div class="modal-footer">
+          <button id="btnAñadirCursoPython" class="options">Añadir Curso</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- The Xamarin Modal -->
+  <div id="XamarinModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modalHeaderSpan">Curso Xamarin</span>
+        <span id="spanXamarin" class="close">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p class="p-description">
+          <b>Xamarin</b> es una plataforma de desarrollo gratuita de Microsoft que permite crear nuestras aplicaciones móviles
+          una sola vez y que funcionen en Android, iOS y Windows Phone entre otros sistemas (Windows 10, Mac, wearables…).
+          Todo ello sin tener que duplicar código o aprender nuevas herramientas. Las apps que creamos con Xamarin son
+          aplicaciones nativas, es decir, no tienen diferencias con las que podríamos crear usando las herramientas propias
+          de cada plataforma.
+          <br><br>
+          El curso se compone de cinco módulos diferentes:
+          <br>
+          <b>Introducción a Xamarin y Azure:</b> en este primer módulo se conocen los conceptos básicos relacionados con Xamarin,
+          se realiza la instalación, se revisa la integración de Xamarin con Visual Studio, un repaso a emuladores y se realiza
+          la primera aplicación Xamarin.Forms.
+          <br>
+          <b>Interfaz de usuario:</b> se conocen las páginas, layouts y controles de Xamarin.Forms. Tras realizar aplicación básica se
+          introduce la necesidad de buenas prácticas. Conocemos y aplicamos el patrón MVVM para terminar con otros conceptos
+          necesarios como la navegación o el sistema de mensajería.
+          <br>
+          <b>Creando el backend de la aplicación en Azure:</b> se crea un backend en Azure. Todos los conceptos necesarios para crear
+          el backend se repasan. Conceptos como la creación de una Azure Mobile App, Azure SQL, Easy Tables, etc. Se completa
+          el módulo integrando el backend en una aplicación Xamarin.
+          <br>
+          <b>Autenticación de usuarios:</b> continuamos progresando en nuevos conceptos, en esta ocasión centrados en añadir autenticación en aplicación Xamarin aprovechando las posibilidades de Azure y utilizando proveedores de autenticación sociales. También hay nuevos conceptos relacionados con Xamarin como el acceso a características específicas de una plataforma con el uso de la cámara y se completa la gestión con el backend previamente creado.
+          <br>
+          <b>Notificaciones Push:</b> se concluye el curso personalizando la aplicación utilizando estilos e integrando notificaciones Push en una aplicación Xamarin.
+          <br>
+          Los esperamos en el curso...
+          </p>
+      </div>
+      <div class="modal-footer">
+          <button id="btnAñadirCursoXamarin" class="options">Añadir Curso</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- The OracleDBA Modal -->
+  <div id="OracleDBAModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modalHeaderSpan">Curso Oracle DBA</span>
+        <span id="spanOracleDBA" class="close">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p class="p-description">
+          <b>Oracle Database Administrator</b> Es un curso que comienza con la introducción a las bases de datos relacionales y las
+          tareas que debe desempeñar un administrador de bases de datos. Luego a través de un emulador, los alumnos aprenderán
+          paso por paso a realizar la instalación del ORACLE. El curso continua enseñando las tareas y funciones clave que son requeridas por un
+          administrador de Base de Datos en un entorno de producción. Los asistentes aprenderán a crear y configurar una Base
+          de Datos operativa, iniciar y cerrar una instancia y demás practicas de DBA como Gestión de Objetos, Gestión de
+          esquemas, seguridad, administración de servicios, performance, tareas de backup y restauración, etc.
+          El Objetivo de este curso es formar administradores de Bases de Datos ORACLE para que los mismos puedan aplicar a
+          puestos de Oracle DBA.
+          <br><br>
+          En este curso aprenderás a:
+          <br>
+          <b>- La Arquitectura de ORACLE  y los principales componentes.</b>
+          <br>
+          <b>- Definir las tareas propias de un Administrador de Bases de Datos.</b>
+          <br>
+          <b>- Instalar paso a paso el ORACLE.</b>
+          <br>
+          <b>- Gestionar las Estructuras de Almacenamiento.</b>
+          <br>
+          <b>- Crear y configurar una Base de Datos operativa.</b>
+          <br>
+          <b>- Iniciar y cerrar una instancia de DBA (como Gestión de Objetos).</b>
+          <br>
+          <b>- Administrar la seguridad de los Usuarios.</b>
+          <br>
+          <b>- Optimizar el rendimiento de la base.</b>
+
+          </p>
+      </div>
+      <div class="modal-footer">
+          <button id="btnAñadirCursoOracleDBA" class="options">Añadir Curso</button>
+      </div>
+    </div>
+  </div>
+
+
+  <script type="text/javascript" src="../js/modal.js" charset="utf-8"></script>
 </body>
 </html>
