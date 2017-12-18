@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.2/minty/bootstrap.min.css">
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EduWeb-Cotizador</title>
@@ -35,5 +36,75 @@
       </ul>
     </div>
   </nav>
+
+<h3>Carrito de compras</h3>
+<h5>Estos son sus productos seleccionados</h5>
+<p id="ListaProductos">No hay productos seleccionados<br></p>
+<h5>Total:</h5>
+<p id="TotalProductos">0</p>
+<input type="button" onclick="resetear()" value="Reset">
+
+<script>
+function resetear(){
+  localStorage.clear();
+  document.getElementById("ListaProductos").innerHTML = "No hay productos seleccionados";
+}
+
+if(document.getElementById("ListaProductos").value == "No hay productos seleccionados"){
+  if(localStorage.Curso1 !="undefined"){
+    document.getElementById("ListaProductos").innerHTML = localStorage.Curso1 + "<br>";
+  }
+}
+if (document.getElementById("ListaProductos").value != "No hay productos seleccionados"){
+    if(localStorage.Curso1 !="undefined"){
+      document.getElementById("ListaProductos").innerHTML += localStorage.Curso1 + "<br>";
+    }
+}
+
+
+if(document.getElementById("ListaProductos").value == "No hay productos seleccionados"){
+  if(localStorage.Curso2 !="undefined"){
+    document.getElementById("ListaProductos").innerHTML = localStorage.Curso2 +"<br>";
+  }
+}
+
+if(document.getElementById("ListaProductos").value != "No hay productos seleccionados"){
+  if(localStorage.Curso2 !="undefined"){
+    document.getElementById("ListaProductos").innerHTML += localStorage.Curso2 + "<br>";
+  }
+}
+
+
+
+
+if(document.getElementById("ListaProductos").value == "No hay productos seleccionados"){
+  if(localStorage.Curso3 !="undefined"){
+    document.getElementById("ListaProductos").innerHTML = localStorage.Curso3 +"<br>";
+  }
+}
+
+if(document.getElementById("ListaProductos").value != "No hay productos seleccionados"){
+  if(localStorage.Curso3 !="undefined"){
+    document.getElementById("ListaProductos").innerHTML += localStorage.Curso3 +"<br>";
+  }
+}
+
+
+
+if(document.getElementById("ListaProductos").value == "No hay productos seleccionados"){
+  if(localStorage.Curso4 !="undefined"){
+    document.getElementById("ListaProductos").innerHTML = localStorage.Curso4 +"<br>";
+  }
+}
+
+if(document.getElementById("ListaProductos").value != "No hay productos seleccionados"){
+  if(localStorage.Curso4 !="undefined"){
+    document.getElementById("ListaProductos").innerHTML += localStorage.Curso4 +"<br>";
+  }
+}
+
+</script>
+
+<script type="text/javascript" src="../js/logicaCotizador.js" charset="utf-8"></script>
 </body>
 </html>

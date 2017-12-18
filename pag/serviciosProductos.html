@@ -102,10 +102,12 @@
           Creación de archivos para Excel
           <br><br>
           Adquieralo ya...
+          <br>
+          Precio: $30
           </p>
       </div>
       <div class="modal-footer">
-          <button id="btnAñadirCursoJava" class="options">Añadir Curso</button>
+          <button id="btnAñadirCursoJava" onclick="AlertaCursoAñadido(); agregaCursoJava()" class="options">Añadir Curso</button>
       </div>
     </div>
 
@@ -168,10 +170,12 @@
           <b>Tutorial Python 18:</b> Diccionarios y sus métodos
           <br><br>
           Te esperamos en el curso...
+          <br>
+          Precio: $34
           </p>
       </div>
       <div class="modal-footer">
-          <button id="btnAñadirCursoPython" class="options">Añadir Curso</button>
+          <button id="btnAñadirCursoPython" onclick="AlertaCursoAñadido(); agregaCursoPython()" class="options">Añadir Curso</button>
       </div>
     </div>
   </div>
@@ -212,10 +216,12 @@
           <b>Notificaciones Push:</b> se concluye el curso personalizando la aplicación utilizando estilos e integrando notificaciones Push en una aplicación Xamarin.
           <br>
           Los esperamos en el curso...
+          <br>
+          Precio: $30
           </p>
       </div>
       <div class="modal-footer">
-          <button id="btnAñadirCursoXamarin" class="options">Añadir Curso</button>
+          <button id="btnAñadirCursoXamarin" onclick="AlertaCursoAñadido(); agregaCursoXamarin()" class="options">Añadir Curso</button>
       </div>
     </div>
   </div>
@@ -257,16 +263,19 @@
           <b>- Administrar la seguridad de los Usuarios.</b>
           <br>
           <b>- Optimizar el rendimiento de la base.</b>
-
+          Los esperamos en el curso...
+          <br>
+          Precio: $40
           </p>
       </div>
       <div class="modal-footer">
-          <button id="btnAñadirCursoOracleDBA" class="options">Añadir Curso</button>
+          <button id="btnAñadirCursoOracleDBA" onclick="AlertaCursoAñadido(); agregaCursoOracleDBA()" class="options">Añadir Curso</button>
       </div>
     </div>
   </div>
 
 
   <script type="text/javascript" src="../js/modal.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../js/logicaCotizador.js" charset="utf-8"></script>
 </body>
 </html>
