@@ -13,33 +13,37 @@
 </head>
 <body>
 
-  <!-- NAV BAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a class="navbar-brand" href="#">EduWeb</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarColor01">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="../index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="quienesSomos.html">Quienes somos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="serviciosProductos.html">Servicios/Productos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="cotizador.html">Cotizador</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="contactenos.html">Contactenos</a>
-        </li>
-      </ul>
-    </div>
+  <!-- NAVBAR -->
+  <div class="navbar-padding">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand" href="#">EduWeb</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="../index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="quienesSomos.html">Quienes somos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="serviciosProductos.html">Servicios/Productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cotizador.html">Cotizador</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contactenos.html">Contactenos</a>
+          </li>
+        </ul>
+      </div>
     </nav>
+  </div>
+  <!-- NAVBAR END -->
 
+  <!-- CONTENT ------------------------------------>
 
   <div class="container">
     <div class="row">
@@ -72,7 +76,8 @@
           <b>Java</b> es un lenguaje orientado a objetos y permite crear programas multiplataforma a través de su máquina
           virtual, lo que lo hace ser un lenguaje muy utilizado para el desarrollo de aplicaciones móviles, aplicaciones
           web, sistemas tradicionales, entre otros tipos. El curso se centrará en los aspectos fundamentales de java
-          como el entorno de desarrollo, la máquina virtual, las características de la programación orientada a objetos y su implementación con este lenguaje y la sintaxis del mismo.
+          como el entorno de desarrollo, la máquina virtual, las características de la programación orientada a objetos y
+          su implementación con este lenguaje y la sintaxis del mismo.
           Este curso está dirigido a personas que tengan conocimientos mínimos o básicos en programación.
           <br><br>
           A continuación puede encontrar los temas del curso:
@@ -107,7 +112,7 @@
           </p>
       </div>
       <div class="modal-footer">
-          <button id="btnAñadirCursoJava" onclick="AlertaCursoAñadido(); agregaCursoJava()" class="options">Añadir Curso</button>
+          <button id="btnAñadirCursoJava" onclick=" agregarCurso('Java',30.0);" class="options">Añadir Curso</button>
       </div>
     </div>
 
@@ -273,6 +278,8 @@
       </div>
     </div>
   </div>
+
+  <!-- CONTENT END ------------------------------->
 
 
   <script type="text/javascript" src="../js/modal.js" charset="utf-8"></script>

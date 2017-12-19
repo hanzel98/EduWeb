@@ -1,22 +1,27 @@
+
+//ESTE ARCHIVO ALMACENA AQUEL CÓDIGO QUE USA EL ARCHIVO serviciosProductos.html para
+//LAS FUNCIONES JAVASCRIPTS.
+
 function AlertaCursoAñadido(){
   alert("Curso Añadido");
 }
 
-var ListaCompras = "";
-var ListaPrecios= [];
+var arregloCursos = recuperarDatosAlmacenados();
 
-function agregaCursoOracleDBA(){
-  localStorage.setItem("Curso1", "Curso Oracle DBA");
+function recuperarDatosAlmacenados(){
+  var arregloCursosAlmacenado = JSON.parse(localStorage.getItem('curso'));
+  if (arregloCursosAlmacenado == null) {
+    return [];
+  } else {
+    return arregloCursosAlmacenado;
+  }
 }
 
-function agregaCursoJava(){
-localStorage.setItem("Curso2", "Curso Java");
-}
+function agregarCurso(pNombre, pPrecio){
+  AlertaCursoAñadido();
+  alert(arregloCursos);
+  var curso = {nombre:pNombre, precio:pPrecio};
+  arregloCursos.push(curso);
 
-function agregaCursoPython(){
-localStorage.setItem("Curso3", "Curso Python");
-}
-
-function agregaCursoXamarin(){
-localStorage.setItem("Curso4", "Curso Xamarin");
+  localStorage.setItem('curso', JSON.stringify(arregloCursos))
 }

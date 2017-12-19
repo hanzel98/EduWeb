@@ -4,106 +4,74 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.2/minty/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/style.css">
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EduWeb-Cotizador</title>
 </head>
+
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a class="navbar-brand" href="#">EduWeb</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <!-- NAVBAR -->
+  <div class="navbar-padding">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand" href="#">EduWeb</a>
 
-    <div class="collapse navbar-collapse" id="navbarColor01">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="../index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="quienesSomos.html">Quienes somos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="serviciosProductos.html">Servicios/Productos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="cotizador.html">Cotizador</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="contactenos.html">Contactenos</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-<h3>Carrito de compras</h3>
-<h5>Estos son sus productos seleccionados</h5>
-<p id="ListaProductos">No hay productos seleccionados<br></p>
-<h5>Total:</h5>
-<p id="TotalProductos">0</p>
-<input type="button" onclick="resetear()" value="Reset">
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="../index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="quienesSomos.html">Quienes somos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="serviciosProductos.html">Servicios/Productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cotizador.html">Cotizador</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contactenos.html">Contactenos</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <!-- NAVBAR END-->
 
-<script>
-function resetear(){
-  localStorage.clear();
-  document.getElementById("ListaProductos").innerHTML = "No hay productos seleccionados";
-}
+  <!-- CONTENT ------------------------------------------------------------------------------------->
+  <div class="container">
+    <h3>Carrito de compras</h3>
+    <h5>Estos son sus productos seleccionados</h5>
+    <p id="ListaProductos">No hay productos seleccionados<br></p>
+    <h5>Total:</h5>
+    <p id="TotalProductos">0</p>
+    <input type="button" onclick="resetear()" value="Reset">
+  </div>
 
-if(document.getElementById("ListaProductos").value == "No hay productos seleccionados"){
-  if(localStorage.Curso1 !="undefined"){
-    document.getElementById("ListaProductos").innerHTML = localStorage.Curso1 + "<br>";
-  }
-}
-if (document.getElementById("ListaProductos").value != "No hay productos seleccionados"){
-    if(localStorage.Curso1 !="undefined"){
-      document.getElementById("ListaProductos").innerHTML += localStorage.Curso1 + "<br>";
+
+  <!-- SCRIPT -------->
+  <script>
+    var listaCursos = JSON.parse(localStorage.getItem('curso'));
+    var texto = "";
+    for (curso in listaCursos) {
+      texto += "Curso: " + listaCursos[curso].nombre + " | Precio: " + listaCursos[curso].precio + "<br>";
     }
-}
+    document.getElementById("ListaProductos").innerHTML = texto;
 
+    function resetear(){
+      localStorage.clear();
+      document.getElementById("ListaProductos").innerHTML = "No hay productos seleccionados";
+    }
+  </script>
+  <!-- SCRIPT END --------->
 
-if(document.getElementById("ListaProductos").value == "No hay productos seleccionados"){
-  if(localStorage.Curso2 !="undefined"){
-    document.getElementById("ListaProductos").innerHTML = localStorage.Curso2 +"<br>";
-  }
-}
-
-if(document.getElementById("ListaProductos").value != "No hay productos seleccionados"){
-  if(localStorage.Curso2 !="undefined"){
-    document.getElementById("ListaProductos").innerHTML += localStorage.Curso2 + "<br>";
-  }
-}
-
-
-
-
-if(document.getElementById("ListaProductos").value == "No hay productos seleccionados"){
-  if(localStorage.Curso3 !="undefined"){
-    document.getElementById("ListaProductos").innerHTML = localStorage.Curso3 +"<br>";
-  }
-}
-
-if(document.getElementById("ListaProductos").value != "No hay productos seleccionados"){
-  if(localStorage.Curso3 !="undefined"){
-    document.getElementById("ListaProductos").innerHTML += localStorage.Curso3 +"<br>";
-  }
-}
-
-
-
-if(document.getElementById("ListaProductos").value == "No hay productos seleccionados"){
-  if(localStorage.Curso4 !="undefined"){
-    document.getElementById("ListaProductos").innerHTML = localStorage.Curso4 +"<br>";
-  }
-}
-
-if(document.getElementById("ListaProductos").value != "No hay productos seleccionados"){
-  if(localStorage.Curso4 !="undefined"){
-    document.getElementById("ListaProductos").innerHTML += localStorage.Curso4 +"<br>";
-  }
-}
-
-</script>
+<!-- CONTENT END ---------------------------------------------------------------------------------------->
 
 <script type="text/javascript" src="../js/logicaCotizador.js" charset="utf-8"></script>
 </body>
