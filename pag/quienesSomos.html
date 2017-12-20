@@ -4,12 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.2/minty/bootstrap.min.css">
+  <script src="../js/jquery-3.2.1.min.js" charset="utf-8"></script>
+  <script src="../js/jquery.flip.min.js" charset="utf-8"></script>
+
+  <script>
+  $(document).ready(function(){
+    $("#hideHanzel").click(function(){
+        $("#motivoHanzel").hide();
+    });
+    $("#showHanzel").click(function(){
+        $("#motivoHanzel").show();
+    });
+    $("#hideJossue").click(function(){
+        $("#motivoJossue").hide();
+    });
+    $("#showJossue").click(function(){
+        $("#motivoJossue").show();
+    });
+});
+</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EduWeb-Quienes Somos</title>
+  <style>
+img{
+  width: 400px;
+  height: 400px;
+}
+.Nombre{
+  margin-top: 50px;
+  font-family: "Times New Roman", Georgia, Serif;
+}
+.col-lg-6{
+margin-top: 50px;
+}
+h1{
+  margin-top: 20px;
+  text-align: center;
+  font-family: "Times New Roman", Georgia, Serif;
+}
+  </style>
 </head>
 <body>
-
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <a class="navbar-brand" href="#">EduWeb</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,5 +74,97 @@
   </nav>
 
 
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div id="demo"></div>
+    </div>
+  </div>
+ </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div id="cardHanzel">
+        <div class="front">
+          <img src="../img/imagen_hanzel.jpg" alt="imagen_hanzel">
+        </div>
+        <div class="back">
+          <img  src="../img/BePositive.jpg" alt="Imagen ">
+        </div>
+      </div>
+      </div>
+      <div class="col-lg-6">
+        <h3 class="Nombre">Hanzel Anchía</h3>
+        <p><b>Trayectoria:</b> Estudiante de ULACIT en la carrera de informática desde el 2016<br>
+          Dispuesto a servirle en lo que necesite saber sobre el curso de su agrado, no dude en escribirnos, <br>
+          Sean bienvenidos a nuestro sitio web</p>
+        <p id="motivoHanzel"><b>Motivo:</b> El motivo de esta página es brindar un servicio de calidad a nuestros estudiantes
+         para que así únicamente se deban enfocar en aprender a su ritmo, mediante cursos creados con el fin de cubrir diversos
+         temas que resultan de interés para un programador</p>
+         <button id="hideHanzel">Mostrar menos</button>
+         <button id="showHanzel">Mostrar más</button>
+        </div>
+      </div>
+    </div>
+
+
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div id="cardJossue">
+            <div class="front">
+              <img src="../img/imagen-gabuardi.jpeg" alt="imagen-gabuardi">
+            </div>
+            <div class="back">
+              <img  src="../img/wantYouWant.jpg" alt="Imagen ">
+            </div>
+          </div>
+          </div>
+          <div class="col-lg-6">
+            <h3 class="Nombre">Jossue Gabuardi</h3>
+            <p><b>Trayectoria:</b> Estudiante de ULACIT en la carrera de informática desde el 2016<br>
+            Esperamos que este sitio web sea de provecho para tí que buscas aprender, esfuerzate y pronto verás los resultados,
+            nosotros estamos para servirte.</p>
+            <p id="motivoJossue"><b>Motivo:</b> El motivo de mi participación es que las personas puedan aprender fácilmente
+             sobre programación utilizando los conocimientos que yo he adquirido durante mi estudio y mediante cursos prácticos
+             donde tú como estudiante podrás notar que estas aprendiendo cada vez más.</p>
+             <button id="hideJossue">Mostrar menos</button>
+             <button id="showJossue">Mostrar más</button>
+            </div>
+          </div>
+        </div>
+
+
+
+<script>
+$("#cardHanzel").flip({
+  axis: 'x',
+  trigger: 'hover'
+});
+
+    $("h3").hover(function(){
+            $(this).css("background-color", "#80DEEA");
+            }, function(){
+            $(this).css("background-color", "#ffffff");
+        });
+
+$("#cardJossue").flip({
+  axis: 'x',
+  trigger: 'hover'
+});
+
+  var list = ["Desarrolladores", "Profesores"];  // la lista de textos a mostrar
+  var txt = $('#h1');  // el ID del contenedor
+  var options = {
+    duration: 1000, // el tiempo que el texto permanecerá visible
+    rearrangeDuration: 1000, // ella duración del efecto
+    effect: 'random', // el efecto que puede ser fadeIn, slideLeft, slideTop o random
+    centered: true // si queremos que se centre
+  }
+  txt.textualizer(list, options); // enviamos los datos
+  txt.textualizer('start'); // y lo ejecutamos
+
+</script>
 </body>
 </html>
