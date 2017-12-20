@@ -57,16 +57,22 @@
 
   <!-- SCRIPT -------->
   <script>
-    var listaCursos = JSON.parse(localStorage.getItem('curso'));
+    var arrayCursos = JSON.parse(localStorage.getItem('curso'));
     var texto = "";
-    for (curso in listaCursos) {
-      texto += "Curso: " + listaCursos[curso].nombre + " | Precio: " + listaCursos[curso].precio + "<br>";
+    var precioTotal = 0;
+    for (curso in arrayCursos) {
+      texto += "Curso: " + arrayCursos[curso].nombre + " | Precio: $" + arrayCursos[curso].precio + "<br>";
+      precioTotal += arrayCursos[curso].precio;
     }
+
     document.getElementById("ListaProductos").innerHTML = texto;
+    document.getElementById("TotalProductos").innerHTML = "$"+precioTotal;
 
     function resetear(){
       localStorage.clear();
       document.getElementById("ListaProductos").innerHTML = "No hay productos seleccionados";
+      document.getElementById("TotalProductos").innerHTML = 0;
+
     }
   </script>
   <!-- SCRIPT END --------->

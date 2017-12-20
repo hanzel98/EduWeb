@@ -19,9 +19,13 @@ function recuperarDatosAlmacenados(){
 
 function agregarCurso(pNombre, pPrecio){
   AlertaCursoAñadido();
-  alert(arregloCursos);
   var curso = {nombre:pNombre, precio:pPrecio};
   arregloCursos.push(curso);
+  localStorage.setItem('curso', JSON.stringify(arregloCursos));
+}
 
-  localStorage.setItem('curso', JSON.stringify(arregloCursos))
+function desactivarBoton(pBoton) {
+  var boton = document.getElementById(pBoton);
+  boton.disabled = true;
+  localStorage.setItem(pBoton, true);
 }

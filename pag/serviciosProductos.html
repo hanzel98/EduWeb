@@ -57,7 +57,7 @@
         <button type="button" id="btnXamarin" class="btn btn-primary btn-lg" style="background-image: url(../img/XamarinLogo.jpg);"></button>
       </div>
       <div class="col-lg-3">
-        <button type="button" id="btnOracleDBA" class="btn btn-primary btn-lg" style="background-image: url(../img/OracleDBALogo.jpg);"></button>
+        <button id="btnOracleDBA" class="btn btn-primary btn-lg" style="background-image: url(../img/OracleDBALogo.jpg);"></button>
       </div>
     </div>
   </div>
@@ -112,7 +112,7 @@
           </p>
       </div>
       <div class="modal-footer">
-          <button id="btnAñadirCursoJava" onclick=" agregarCurso('Java',30.0);" class="options">Añadir Curso</button>
+          <button id="btnAñadirCursoJava" onclick="agregarCurso('Java',30.0); desactivarBoton('btnAñadirCursoJava')" class="options">Añadir Curso</button>
       </div>
     </div>
 
@@ -180,7 +180,7 @@
           </p>
       </div>
       <div class="modal-footer">
-          <button id="btnAñadirCursoPython" onclick="AlertaCursoAñadido(); agregaCursoPython()" class="options">Añadir Curso</button>
+          <button id="btnAñadirCursoPython" onclick="agregarCurso('Python',34); desactivarBoton('btnAñadirCursoPython')" class="options">Añadir Curso</button>
       </div>
     </div>
   </div>
@@ -226,7 +226,7 @@
           </p>
       </div>
       <div class="modal-footer">
-          <button id="btnAñadirCursoXamarin" onclick="AlertaCursoAñadido(); agregaCursoXamarin()" class="options">Añadir Curso</button>
+          <button id="btnAñadirCursoXamarin" onclick="agregarCurso('Xamarin',30); desactivarBoton('btnAñadirCursoXamarin')" class="options">Añadir Curso</button>
       </div>
     </div>
   </div>
@@ -274,7 +274,7 @@
           </p>
       </div>
       <div class="modal-footer">
-          <button id="btnAñadirCursoOracleDBA" onclick="AlertaCursoAñadido(); agregaCursoOracleDBA()" class="options">Añadir Curso</button>
+          <button id="btnAñadirCursoOracleDBA" onclick="agregarCurso('Oracle DBA',40); desactivarBoton('btnAñadirCursoOracleDBA')" class="options">Añadir Curso</button>
       </div>
     </div>
   </div>
@@ -284,5 +284,6 @@
 
   <script type="text/javascript" src="../js/modal.js" charset="utf-8"></script>
   <script type="text/javascript" src="../js/logicaCotizador.js" charset="utf-8"></script>
+
 </body>
 </html>
