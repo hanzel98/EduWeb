@@ -17,9 +17,9 @@ function recuperarDatosAlmacenados(){
   }
 }
 
-function agregarCurso(pNombre, pPrecio){
+function agregarCurso(pNombre, pPrecio, pBotonID){
   AlertaCursoAñadido();
-  var curso = {nombre:pNombre, precio:pPrecio};
+  var curso = {nombre:pNombre, precio:pPrecio, botonID:pBotonID};
   arregloCursos.push(curso);
   localStorage.setItem('curso', JSON.stringify(arregloCursos));
 }

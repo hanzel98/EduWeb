@@ -1,0 +1,13 @@
+  .col-der-tabla-factura {
+  text-align:right;
+}
+
+table {
+    border-collapse:separate;
+    border:solid 1px;
+    border-radius:6px;
+}
+
+.icono-basura {
+  height: 25px;
+}

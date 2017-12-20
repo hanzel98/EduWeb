@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.2/minty/bootstrap.min.css">
   <link rel="stylesheet" href="../css/style.css">
-
+  <link rel="stylesheet" href="../css/style_cotizador.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EduWeb-Cotizador</title>
+  <script src="../js/jquery.min.js"></script>
 </head>
 
 <body>
@@ -46,39 +47,100 @@
 
   <!-- CONTENT ------------------------------------------------------------------------------------->
   <div class="container">
-    <h3>Carrito de compras</h3>
-    <h5>Estos son sus productos seleccionados</h5>
-    <p id="ListaProductos">No hay productos seleccionados<br></p>
+    <h3>CARRITO DE COMPRAS</h3>
+    <hr>
+    <p>Estos son sus productos seleccionados</p>
+
+    <table class="table table-hover">
+      <thead>
+        <tr class="table-primary">
+          <th scope="col">#</th>
+          <th scope="col">CURSO</th>
+          <th scope="col" class="col-der-tabla-factura">PRECIO</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+    </table>
+
     <h5>Total:</h5>
     <p id="TotalProductos">0</p>
     <input type="button" onclick="resetear()" value="Reset">
   </div>
 
-
-  <!-- SCRIPT -------->
-  <script>
-    var arrayCursos = JSON.parse(localStorage.getItem('curso'));
-    var texto = "";
-    var precioTotal = 0;
-    for (curso in arrayCursos) {
-      texto += "Curso: " + arrayCursos[curso].nombre + " | Precio: $" + arrayCursos[curso].precio + "<br>";
-      precioTotal += arrayCursos[curso].precio;
-    }
-
-    document.getElementById("ListaProductos").innerHTML = texto;
-    document.getElementById("TotalProductos").innerHTML = "$"+precioTotal;
-
-    function resetear(){
-      localStorage.clear();
-      document.getElementById("ListaProductos").innerHTML = "No hay productos seleccionados";
-      document.getElementById("TotalProductos").innerHTML = 0;
-
-    }
-  </script>
-  <!-- SCRIPT END --------->
-
 <!-- CONTENT END ---------------------------------------------------------------------------------------->
 
-<script type="text/javascript" src="../js/logicaCotizador.js" charset="utf-8"></script>
+<!-- SCRIPT --------------------------------------------------------------------------------------------->
+<script>
+  var arrayCursos = JSON.parse(localStorage.getItem('curso'));
+  var precioTotal = 0;
+  if (arrayCursos == null || arrayCursos.length == 0){
+    agregarFilaTablaVacia();
+  } else {
+    for (var i = 0; i< arrayCursos.length; i++) {
+      agregarFilaTabla(arrayCursos[i].nombre, arrayCursos[i].precio, i);
+      precioTotal += arrayCursos[i].precio;
+    }//for ENDS
+    document.getElementById("TotalProductos").innerHTML = "$"+precioTotal;
+  }//else ENDS
+
+  function resetear(){
+    localStorage.clear();
+    document.getElementById("TotalProductos").innerHTML = 0;
+    arrayCursos = JSON.parse(localStorage.getItem('curso'));
+    agregarFilaTablaVacia();
+  }//function ENDS
+
+  function agregarFilaTabla(pCurso, pPrecio, pNumeroPosicion){
+    $(document).ready(function(){
+      $("table").append("<tr class='table-primary'><th scope='row'>"+(pNumeroPosicion+1)+"</th><td>"+pCurso+"</td><td class='col-der-tabla-factura'>$"
+      +pPrecio+"</td><td class='col-der-tabla-factura'> <img class='icono-basura' src='../img/trash_icon.png' onclick='rico("+pNumeroPosicion+")'></td></tr>");
+    });
+  }//function ENDS
+
+  function rico(pNumeroPosicion){
+    var arrayTemporal = [];
+    for (var i = 0; i < arrayCursos.length; i++) {
+      if (i != pNumeroPosicion) {
+        arrayTemporal.push(arrayCursos[i]);
+      } else {
+        var botonID = arrayCursos[i].botonID;
+        localStorage.removeItem(botonID)
+      }//else END
+    }//for ENDS
+    arrayCursos = arrayTemporal;
+    precioTotal = 0;
+
+    if (arrayCursos.length == 0) {
+      agregarFilaTablaVacia();
+    }else{
+      reiniciarTabla();
+      for (var i = 0; i < arrayCursos.length; i++) {
+        agregarFilaTabla(arrayCursos[i].nombre, arrayCursos[i].precio,i);
+        precioTotal += arrayCursos[i].precio;
+      }//for ENDS
+    }//else ENDS
+    document.getElementById("TotalProductos").innerHTML = "$"+precioTotal;
+    localStorage.setItem('curso', JSON.stringify(arrayCursos));
+  }//function ENDS
+
+  function agregarFilaTablaVacia(){
+    $(document).ready(function(){
+      $("table").html("<tr class='table-primary'><th scope='row'></th><td>NO HAY CURSOS EN EL CARRITO</td><td></td><td></td></tr>");
+    });
+  }//function ENDS
+
+  function reiniciarTabla(){
+    $(document).ready(function(){
+      $("table").html("<tr class='table-primary'>"+
+        "<th scope='col'>#</th>"+
+        "<th scope='col'>CURSO</th>"+
+        "<th scope='col' class='col-der-tabla-factura'>PRECIO</th>"+
+        "<th scope='col'></th>"+
+      "</tr>");
+    });
+  }//function ENDS
+</script>
+<!-- SCRIPT END ---------------------------------------------------------------------------------------------------------------------------------------------->
+
 </body>
 </html>
