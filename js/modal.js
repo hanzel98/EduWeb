@@ -2,28 +2,28 @@
   // When the user clicks the button, open the modal
   btnJava.onclick = function() {
       JavaModal.style.display = "block";
-
       var estadoBoton = localStorage.getItem('btnAñadirCursoJava');
       if (estadoBoton != null) {
         var btn = document.getElementById('btnAñadirCursoJava');
         btn.disabled = true;
+        btn.style.opacity = 0.5;
       }
   }
 
   // When the user clicks on <span> (x), close the modal
   spanJava.onclick = function() {
-      JavaModal.style.display = "none";
+    JavaModal.style.display = "none";
   }
 
 //-----------------------------------------------Curso Pyhton--------------------------------------------------------------------
 // When the user clicks the button, open the modal
 btnPython.onclick = function() {
     PythonModal.style.display = "block";
-
     var estadoBoton = localStorage.getItem('btnAñadirCursoPython');
     if (estadoBoton != null) {
       var btn = document.getElementById('btnAñadirCursoPython');
       btn.disabled = true;
+      btn.style.opacity = 0.5;
     }
 }
 
@@ -41,7 +41,8 @@ btnXamarin.onclick = function() {
     if (estadoBoton != null) {
       var btn = document.getElementById('btnAñadirCursoXamarin');
       btn.disabled = true;
-    }btnAñadirCursoJava
+      btn.style.opacity = 0.5;
+    }
 }
 
 // When the user clicks on <span> (x), close the modal
@@ -58,6 +59,7 @@ btnOracleDBA.onclick = function() {
     if (estadoBoton != null) {
       var btn = document.getElementById('btnAñadirCursoOracleDBA');
       btn.disabled = true;
+      btn.style.opacity = 0.5;
     }
 }
 

@@ -1,18 +1,19 @@
-/*  
-    http://www.dailycoding.com/ 
+/*
+    http://www.dailycoding.com/
 */
 (function ($) {
     $.fn.imageLens = function (options) {
-
         var defaults = {
             lensSize: 100,
             borderSize: 4,
             borderColor: "#888"
         };
+
         var options = $.extend(defaults, options);
+        
         var lensStyle = "background-position: 0px 0px;width: " + String(options.lensSize) + "px;height: " + String(options.lensSize)
             + "px;float: left;display: none;border-radius: " + String(options.lensSize / 2 + options.borderSize)
-            + "px;border: " + String(options.borderSize) + "px solid " + options.borderColor 
+            + "px;border: " + String(options.borderSize) + "px solid " + options.borderColor
             + ";background-repeat: no-repeat;position: absolute;";
 
         return this.each(function () {

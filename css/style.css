@@ -1,3 +1,7 @@
+body {
+  padding-bottom: 40px;
+}
+
 .navbar-padding{
   padding-bottom: 40px;
 }
@@ -12,6 +16,25 @@
   margin: 40px;
   color: #4DB6AC;
 }
+
+.center-block {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+.business-header {
+  height: 50vh;
+  min-height: 300px;
+  background: url('../img/banner.jpg')
+  center center no-repeat scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
 #seccion2{
   margin-top: 30px;
 }

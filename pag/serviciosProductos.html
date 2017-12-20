@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/style_servicios.css">
   <link rel="stylesheet" href="../css/modal.css">
+  <script src="../js/jquery.min.js" charset="utf-8"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EduWeb-Servicios/Productos</title>
@@ -280,10 +281,35 @@
   </div>
 
   <!-- CONTENT END ------------------------------->
-
-
   <script type="text/javascript" src="../js/modal.js" charset="utf-8"></script>
   <script type="text/javascript" src="../js/logicaCotizador.js" charset="utf-8"></script>
-
+  <script>
+    $(document).ready(function(){
+      $("#btnAñadirCursoJava").click(function(){
+        $("#btnAñadirCursoJava").animate({
+          opacity: '0.5'
+          //localStorage.setItem('opacidadButonJava','0,5');
+        });
+      });
+      $("#btnAñadirCursoPython").click(function(){
+        $("#btnAñadirCursoPython").animate({
+          opacity: '0.5'
+          //localStorage.setItem('opacidadButonPython','0,5');
+        });
+      });
+      $("#btnAñadirCursoXamarin").click(function(){
+        $("#btnAñadirCursoXamarin").animate({
+          opacity: '0.5'
+          //localStorage.setItem('opacidadButonXamarin','0,5');
+        });
+      });
+      $("#btnAñadirCursoOracleDBA").click(function(){
+        $("#btnAñadirCursoOracleDBA").animate({
+          opacity: '0.5'
+          //localStorage.setItem('opacidadButonOracleDBA','0,5');
+        });
+      });
+    });
+  </script>
 </body>
 </html>
