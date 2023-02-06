@@ -1,0 +1,22 @@
+[
+  {
+    "trait_type": "face",
+    "value": "happy"
+  },
+  {
+    "trait_type": "hair",
+    "value": "pink toque"
+  },
+  {
+    "trait_type": "body",
+    "value": "white collar"
+  },
+  {
+    "trait_type": "background",
+    "value": "orange"
+  },
+  {
+    "trait_type": "head",
+    "value": "med"
+  }
+]
